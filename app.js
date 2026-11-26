@@ -17,7 +17,7 @@ stopButton.addEventListener('click', stopStopwatch);
 resetButton.addEventListener('click', resetStopwatch);
 
 function startStopwatch() {
-  intervalId = setInterval(updateStopwatch, 50);
+  intervalId = setInterval(updateStopwatch, 1000);
   startButton.disabled = true;
   stopButton.disabled = false;
 }
@@ -33,7 +33,9 @@ function resetStopwatch() {
   hours = 0;
   minutes = 0;
   seconds = 0;
-  updateStopwatch();
+  hoursElement.textContent = '00';
+  minutesElement.textContent = '00';
+  secondsElement.textContent = '00';
   startButton.disabled = false;
   stopButton.disabled = true;
 }
